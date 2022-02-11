@@ -146,8 +146,12 @@ a:focus, a:active, .btn:focus, .btn:active{
 .bg-lightill {
   background-color: #f0f4f5 !important;
 }
-.brand-blue{
-color: #2c72ea !important;
+.brand-sd-blue{
+color: #03A9F7 !important;
+}
+
+.bg-brand-sd-lightblue {
+  background-color: #03A9F7;
 }
 
 .bg-fdark{

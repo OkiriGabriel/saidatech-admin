@@ -128,7 +128,7 @@ const SideBar = ({ barState }) => {
 
                 <div className="ui-sidebar-primary-header">
 
-                    <Link to="/dashboard/student" to=""><img className="logo" src="../../../images/assets/logo-white.svg" alt="" /></Link>
+                    <Link to="/dashboard/student"><img className="logo" src="../../../images/assets/logo-sd.svg" alt="" /></Link>
 
                 </div>
 
@@ -138,50 +138,68 @@ const SideBar = ({ barState }) => {
 
                     <ul id="ui-sidebar-primary-links" className={`ui-sidebar-primary-links primary-nav`}>
 
-                        <li className={ `${active === 'overview' ? 'active' : ''} nav-list` }>
-                            <Link onClick={(e) => goto(e, '/dashboard/student', 'overview')} to='' className='ui-icon-animate link' title='Overview'>
-                                <span style={{position: 'relative', left: '-3px', lineHeight: '0px'}} className='saidatech-icon sl'><img src={`../../../images/icons/${active === 'overview' ? '': 'd'}home.svg`} alt="icon" /></span>
+                        <li className={ `${active === 'home' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/student', 'home')} to='' className='ui-icon-animate link' title='Home'>
+                                <span style={{position: 'relative', left: '-3px', lineHeight: '0px'}} className='saidatech-icon sl'><img src={`../../../images/icons/${active === 'home' ? 'd': 'd'}home.svg`} alt="icon" /></span>
                                 <span style={{position: 'relative', left: '-2px'}} className='lnk--text sb-text font-matterregular fs-13'>
-                                    Overview
+                                    Home
                                 </span>
                             </Link>
                         </li>
 
-                        <li className={ `${active === 'courses' ? 'active' : ''} nav-list` }>
-                            <Link onClick={(e) => goto(e, '/dashboard/student/courses', 'courses')} to='' className='ui-icon-animate link' title='Courses'>
-                                <span className='saidatech-icon sl ' style={{position: 'relative', left: '-4px'}}><img src={`../../../images/icons/${active === 'courses' ? '': 'd'}course.svg`} alt="icon" /></span>
+                        {/* <li className={ `${active === 'profile' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/student', 'profile')} to='' className='ui-icon-animate link' title='Profile'>
+                                <span className='saidatech-icon sl ' style={{position: 'relative', left: '-4px'}}><img src={`../../../images/icons/${active === 'profile' ? '': 'd'}profile.svg`} alt="icon" /></span>
                                 <span style={{position: 'relative', left: '-4px'}} className='lnk--text sb-text font-matterregular fs-13'>
-                                    Courses
+                                    Profile
                                 </span>
                             </Link>
                         </li>
 
-                        <li className={ `${active === 'group' ? 'active' : ''} nav-list` }>
-                            <Link onClick={(e) => goto(e, '/dashboard/student', 'group')} to='' className='ui-icon-animate link' title='Group'>
-                                <span style={{position: 'relative', left: '-4px'}} className='saidatech-icon md'><img src={`../../../images/icons/${active === 'group' ? '': 'd'}team.svg`} alt="icon" /></span>
+                        <li className={ `${active === 'payment' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/student', 'payment')} to='' className='ui-icon-animate link' title='Payment History'>
+                                <span style={{position: 'relative', left: '-4px'}} className='saidatech-icon md'><img src={`../../../images/icons/${active === 'payment' ? '': 'd'}cards.svg`} alt="icon" /></span>
                                 <span style={{position: 'relative', left: '-4px'}} className='lnk--text sb-text font-matterregular fs-13'>
-                                    Group
+                                    Payment History
                                 </span>
                             </Link>
                         </li>
 
-                        <li className={ `${active === 'mentor' ? 'active' : ''} nav-list` }>
-                            <Link onClick={(e) => goto(e, '/dashboard/student', 'mentor')} to='' className='ui-icon-animate link' title='Mentor'>
-                                <span style={{position: 'relative', left: '-3px'}} className='saidatech-icon xsl'><img src={`../../../images/icons/${active === 'mentor' ? '': 'd'}mentor.svg`} alt="icon" /></span>
+                        <li className={ `${active === 'contracts' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/student', 'contracts')} to='' className='ui-icon-animate link' title='Contracts'>
+                                <span style={{position: 'relative', left: '-3px'}} className='saidatech-icon xsl'><img src={`../../../images/icons/${active === 'contracts' ? '': 'd'}book.svg`} alt="icon" /></span>
                                 <span style={{position: 'relative', left: '1px'}} className='lnk--text sb-text font-matterregular fs-13'>
-                                    Mentor
+                                    Contracts
                                 </span>
                             </Link>
                         </li>
 
-                        <li className={ `${active === 'settings' ? 'active' : ''} nav-list` }>
-                            <Link onClick={(e) => goto(e, '/dashboard/student', 'settings')} to='' className='ui-icon-animate link' title='Group'>
-                                <span style={{position: 'relative', left: '-4px', lineHeight: '0px'}} className='saidatech-icon md'><img src={`../../../images/icons/${active === 'settings' ? '': 'd'}settings.svg`} alt="icon" /></span>
+                        <li className={ `${active === 'certificate' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/student', 'certificate')} to='' className='ui-icon-animate link' title='Certificate'>
+                                <span style={{position: 'relative', left: '-4px', lineHeight: '0px'}} className='saidatech-icon md'><img src={`../../../images/icons/${active === 'certificate' ? '': 'd'}award.svg`} alt="icon" /></span>
                                 <span style={{position: 'relative', left: '-4px'}} className='lnk--text sb-text font-matterregular fs-13'>
-                                    Settings
+                                    Certificate
                                 </span>
                             </Link>
                         </li>
+                        
+                        <li className={ `${active === 'homework' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/student', 'homework')} to='' className='ui-icon-animate link' title='Homework'>
+                                <span style={{position: 'relative', left: '-4px', lineHeight: '0px'}} className='saidatech-icon md'><img src={`../../../images/icons/${active === 'homework' ? '': 'd'}home.svg`} alt="icon" /></span>
+                                <span style={{position: 'relative', left: '-4px'}} className='lnk--text sb-text font-matterregular fs-13'>
+                                    Homework
+                                </span>
+                            </Link>
+                        </li>
+                       
+                        <li className={ `${active === 'notifications' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/student', 'notifications')} to='' className='ui-icon-animate link' title='Notifications'>
+                                <span style={{position: 'relative', left: '-4px', lineHeight: '0px'}} className='saidatech-icon md'><img src={`../../../images/icons/${active === 'notifications' ? '': 'd'}notification.svg`} alt="icon" /></span>
+                                <span style={{position: 'relative', left: '-4px'}} className='lnk--text sb-text font-matterregular fs-13'>
+                                    Notifications
+                                </span>
+                            </Link>
+                        </li> */}
 
                        
 
@@ -235,7 +253,7 @@ const SideBar = ({ barState }) => {
 
                         <li className={ `nav-list` }>
                             <Link onClick={(e) => logout(e) } to='' className='ui-icon-animate link' title='Logout'>
-                                <span className='saidatech-icon smd'><img src="../../../images/icons/dpower.svg" alt="icon" /></span>
+                                <span className='saidatech-icon smd'><img src="../../../images/icons/dlogout.svg" alt="icon" /></span>
                                 <span className='lnk--text sb-text font-matterregular fs-13'>
                                     Logout
                                 </span>
