@@ -269,111 +269,111 @@ const Login = (props) => {
 
             <section className="hero hero-home ui-full-bg-norm  bg-"style={{ backgroundImage: 'url("../../images/assets/section.png")' }}>
 
-<div className="container">
+                <div className="container">
 
-    <div className='row no-gutters'>
+                    <div className='row no-gutters'>
 
-        <div className='col-lg-8 col-md-12 mx-auto'>
+                        <div className='col-lg-8 col-md-12 mx-auto'>
 
 
-            <div className='row'>
+                            <div className='row'>
 
-                <div className='col-lg-6 col-md-7 mx-auto'>
+                                <div className='col-lg-6 col-md-7 mx-auto'>
 
-                    <div className='flex-height d-flex justify-content-center align-items-center'>
+                                    <div className='flex-height d-flex justify-content-center align-items-center'>
 
-                        <div className='form-box ui-line-height bg-white'>
+                                        <div className='form-box ui-line-height bg-white'>
 
-                            <div className='ui-text-center mrgb2'>
+                                            <div className='ui-text-center mrgb2'>
 
-                                {/* <Link to='/'><img src="../../../images/assets/logo-white.svg" alt="logo-white" width={'195px'} /></Link> */}
-                                <Link to='/' className="font-matterbold ui-text-center brand-blue fs-24">S A I D A T E C H</Link>
+                                                {/* <Link to='/'><img src="../../../images/assets/logo-white.svg" alt="logo-white" width={'195px'} /></Link> */}
+                                                <Link to='/' className="font-matterbold ui-text-center brand-blue fs-24">S A I D A T E C H</Link>
+                                            </div>
+
+                                        
+                                                
+                                            <Alert show={alert.show} type={alert.type} message={alert.message} />
+
+
+                                                <form onSubmit={(e) => e.preventDefault()} className='form auth-form mrgt1 '>
+                                                    {
+                                                        step === 0 &&
+                                                        <>
+
+                                                            <div>
+                                                                <h3 className="font-matterregular ui-text-center onblack  mrgb2 mrgt1 fs-16">
+                                                                    Welcome Back! Please login
+                                                                </h3>
+
+                                                                <div className="form-group">
+                                                                    <input 
+                                                                    type="email" className="form-control fs-13 lg font-matterregular" 
+                                                                    placeholder="Your email" />
+                                                                </div>
+
+                                                                <div className="form-group password-input mt-4"> 
+                                                                    <Link  onClick={(e) => showPass(e)} className="eye">
+                                                                        <span className="saidatech-icon md"><img src={`../../../images/icons/${pass === "password" ? 'eye' : 'eye-off'}.svg`} alt="icon eye" /></span>
+                                                                    </Link>
+                                                                    <input type={pass} 
+                                                                    className="form-control fs-13  font-matterregular lg" placeholder="Type password" />
+                                                                </div>
+
+                                                                <div className="ui-group-button mrgt2">
+                                                                    {
+                                                                        loading &&
+                                                                        <Link to="/" className="btn btn-block lg bg-brand-blue font-matterbold onwhite disabled-lt">
+                                                                            <span className='concreap-loader white sm'></span>
+                                                                        </Link>
+                                                                    }
+                                                                    {
+                                                                        !loading &&
+                                                                        <Link onClick={(e) => login(e)} to="/" className="btn btn-block md bg-brand-blue  fs-16 gradient-org font-mattermedium onwhite">
+                                                                            Login
+                                                                        </Link>
+                                                                    }
+                                                                    </div>
+
+                                                                    <div className='ui-text-center mrgt1'>
+                                                                        <p  className="fs-13 font-matterlight mb-1 on-black ml-3">contiune using </p>
+                                                                        <a href=""><img src="../../../images/assets/google.png" alt="blob" width="20px" /></a>
+                                                                    </div>
+
+                                                                    <div className='ui-text-center mrgt1'>
+                                                                        <Link to="/forgot-password" className="font-matterregular brandcc-lightblue fs-12">Forgot Password?</Link>
+                                                                    </div>
+
+                                                                    <div className='ui-text-center mrgt pb-2'>
+                                                                        <Link to="/register" className="font-matterregular brandcc-indigo fs-12">New User ? Create account</Link>
+                                                                    </div>
+                                                                    
+                                                                
+                                                            </div>
+                                                                
+                                                        </>
+
+                                                    }  
+                                    
+                                                    
+                                                </form>
+
+                                        </div>
+                                    
+                                    
+                                    </div>
+
+                                </div>
+
                             </div>
 
-                          
-                                
-                            <Alert show={alert.show} type={alert.type} message={alert.message} />
-
-
-                                <form onSubmit={(e) => e.preventDefault()} className='form auth-form mrgt1 '>
-                                    {
-                                        step === 0 &&
-                                        <>
-
-                                            <div>
-                                                <h3 className="font-matterregular ui-text-center onblack  mrgb2 mrgt1 fs-16">
-                                                    Welcome Back! Please login
-                                                </h3>
-
-                                                <div className="form-group">
-                                                    <input 
-                                                    type="email" className="form-control fs-13 lg font-matterregular" 
-                                                    placeholder="Your email" />
-                                                </div>
-
-                                                <div className="form-group password-input mt-4"> 
-                                                    <Link  onClick={(e) => showPass(e)} className="eye">
-                                                        <span className="saidatech-icon md"><img src={`../../../images/icons/${pass === "password" ? 'eye' : 'eye-off'}.svg`} alt="icon eye" /></span>
-                                                    </Link>
-                                                    <input type={pass} 
-                                                    className="form-control fs-13  font-matterregular lg" placeholder="Type password" />
-                                                </div>
-
-                                                <div className="ui-group-button mrgt2">
-                                                    {
-                                                        loading &&
-                                                        <Link to="/" className="btn btn-block lg bg-brand-blue font-matterbold onwhite disabled-lt">
-                                                            <span className='concreap-loader white sm'></span>
-                                                        </Link>
-                                                    }
-                                                    {
-                                                        !loading &&
-                                                        <Link onClick={(e) => login(e)} to="/" className="btn btn-block md bg-brand-blue  fs-16 gradient-org font-mattermedium onwhite">
-                                                            Login
-                                                        </Link>
-                                                    }
-                                                    </div>
-
-                                                    <div className='ui-text-center mrgt1'>
-                                                        <p  className="fs-13 font-matterlight mb-1 on-black ml-3">contiune using </p>
-                                                        <a href=""><img src="../../../images/assets/google.png" alt="blob" width="20px" /></a>
-                                                    </div>
-
-                                                    <div className='ui-text-center mrgt1'>
-                                                        <Link to="/forgot-password" className="font-matterregular brandcc-lightblue fs-12">Forgot Password?</Link>
-                                                    </div>
-
-                                                    <div className='ui-text-center mrgt pb-2'>
-                                                        <Link to="/register" className="font-matterregular brandcc-indigo fs-12">New User ? Create account</Link>
-                                                    </div>
-                                                    
-                                                
-                                            </div>
-                                                
-                                        </>
-
-                                    }  
-                      
-                                    
-                                </form>
 
                         </div>
-                       
-                       
+
                     </div>
 
                 </div>
 
-            </div>
-
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
+            </section>
 
 
         </>

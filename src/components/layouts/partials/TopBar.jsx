@@ -130,7 +130,7 @@ const TopBar = ({ isFixed, pageTitle, showBack, barType }) => {
                 <div className="options">
 
                 
-                    <ul className="ui-topbar-nav">
+                    {/* <ul className="ui-topbar-nav">
 
                         <li className='ui-hide-mobile-only'>
                             <Link className="topbar-dp">
@@ -187,7 +187,7 @@ const TopBar = ({ isFixed, pageTitle, showBack, barType }) => {
                             <Link onClick={(e) => openSidebar(e)} className="sd-menu brandcc-red" style={{position: 'relative', top: '5px'}}><span className={`fe fe-${icon} fs-23`}></span></Link>
                         </li>
 
-                    </ul>
+                    </ul> */}
 
                 </div>
 

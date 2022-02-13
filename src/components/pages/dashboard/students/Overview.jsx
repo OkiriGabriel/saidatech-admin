@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Overview = () => {
-  return (
-      <>
+import AddModal from "./Add"
 
-        <section className='section ui-wrapper-mini'>
+const Overview = () => {
+
+    const [show, setShow] = useState(false);
+
+    const toggleAdd = (e) => {
+        if(e) e.preventDefault();
+        setShow(!show);
+    }
+
+    return (
+        <>
+
+            <section className='section ui-wrapper-mini'>
 
                 <div className="mrgt2">
 
@@ -29,7 +39,7 @@ const Overview = () => {
                                     <div className="ui-page-header-options">
 
                                         <div className="ui-group-button">
-                                            <Link className="btn mini bg-brand-sd-lightblue onwhite font-matterbold">Add Manager</Link>
+                                            <Link onClick={() => toggleAdd()} className="btn mini bg-brand-sd-lightblue onwhite font-matterbold">Add Student</Link>
                                             <Link className="btn mini ghost  brand-sd-blue font-matterregular ui-hide-mobile-only">Export</Link>
                                         </div>
 
@@ -44,8 +54,7 @@ const Overview = () => {
                                             <th className="fs-14 font-mattermedium onblack">First name</th>
                                             <th className="fs-14 font-mattermedium onblack">Last name</th>
                                             <th className="fs-14 font-mattermedium onblack">Email</th>
-                                            <th className="fs-14 font-mattermedium onblack">Phone number</th>
-                                            <th className="fs-14 font-mattermedium onblack">Invite status</th>
+                                            <th className="fs-14 font-mattermedium onblack">Course</th>
                                             <th className="fs-14 font-mattermedium onblack">Action</th>
                                         </tr>
                                     </thead>
@@ -54,13 +63,12 @@ const Overview = () => {
 
                                         <tr className="ui-table-row">
 
-                                            <td className="fs-14 font-matterlight onblack"></td>
-                                            <td className="fs-14 font-matterlight onblack"></td>
-                                            <td className="fs-14 font-matterlight onblack ui-hide-mobile-only"></td>
-                                            <td className="fs-14 font-matterlight onblack ui-hide-mobile-only"></td>
-                                            <td className=''></td>
+                                            <td className="fs-14 font-matterlight onblack">John</td>
+                                            <td className="fs-14 font-matterlight onblack">Doe</td>
+                                            <td className="fs-14 font-matterlight onblack ui-hide-mobile-only">john@gmail.com</td>
+                                            <td className="fs-14 font-matterlight onblack ui-hide-mobile-only">Data structure</td>
                                             <td className="fs-14 font-matterbold ui-group-button">
-                                                <Link className="brandcc-lblue font-matterbold fs-14">Details</Link>
+                                                <Link to="/dashoard/student/details" className="brandcc-lblue font-matterbold fs-14">Details</Link>
                                             </td>
                                         
                                         </tr>
@@ -79,8 +87,10 @@ const Overview = () => {
 
             </section>
 
-      </>
-  );
+            <AddModal isShow={show} closeModal={toggleAdd} modalTitle="Add Student" flattened={true} slim="slim-lg" />
+
+        </>
+    );
 };
 
 export default Overview;

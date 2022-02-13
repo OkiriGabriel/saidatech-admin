@@ -12,7 +12,8 @@ import UserState from './context/user/userState'
 import ResourceState from './context/resource/resourceState'
 
 // components: lazyload pages
-const Home = React.lazy(() => import('./components/pages/dashboard/students/Overview'))
+const Home = React.lazy(() => import('./components/pages/dashboard/students/Overview'));
+const Details = React.lazy(() => import('./components/pages/dashboard/students/Details'));
 
 const Login = React.lazy(() => import('./components/pages/auth/Login'));
 const NotFound = React.lazy(() => import('./components/pages/404'));
@@ -44,6 +45,7 @@ const App = () => {
                   <Route exact path="/no-network" component={NetworkUi} />
 
                   <Route exact path="/dashboard/student" component={DashboardLayout(Home, 'Overview')} />
+                  <Route exact path="/dashoard/student/details" component={DashboardLayout(Details, 'Details', true)} />
 
                   <Route exact path="*" component={NotFound} />
                 </Switch>
