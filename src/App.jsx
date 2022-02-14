@@ -12,8 +12,14 @@ import UserState from './context/user/userState'
 import ResourceState from './context/resource/resourceState'
 
 // components: lazyload pages
-const Home = React.lazy(() => import('./components/pages/dashboard/students/Overview'));
-const Details = React.lazy(() => import('./components/pages/dashboard/students/Details'));
+const StudentOverview = React.lazy(() => import('./components/pages/dashboard/students/Overview'));
+const StudentDetails = React.lazy(() => import('./components/pages/dashboard/students/Details'));
+
+const InstructorOverview = React.lazy(() => import('./components/pages/dashboard/instructor/Overview'));
+const InstructorDetails = React.lazy(() => import('./components/pages/dashboard/instructor/Details'));
+
+const CourseOverview = React.lazy(() => import('./components/pages/dashboard/course/Overview'));
+const CourseDetails = React.lazy(() => import('./components/pages/dashboard/course/Details'));
 
 const Login = React.lazy(() => import('./components/pages/auth/Login'));
 const NotFound = React.lazy(() => import('./components/pages/404'));
@@ -44,8 +50,14 @@ const App = () => {
                   <Route exact path="/" component={Login} />
                   <Route exact path="/no-network" component={NetworkUi} />
 
-                  <Route exact path="/dashboard/student" component={DashboardLayout(Home, 'Overview')} />
-                  <Route exact path="/dashoard/student/details" component={DashboardLayout(Details, 'Details', true)} />
+                  <Route exact path="/dashboard/student" component={DashboardLayout(StudentOverview, 'Student Overview')} />
+                  <Route exact path="/dashoard/student/:id" component={DashboardLayout(StudentDetails, 'Student Details', true)} />
+
+                  <Route exact path="/dashboard/instructor" component={DashboardLayout(InstructorOverview, 'Instructor Overview')} />
+                  <Route exact path="/dashboard/instructor/:id" component={DashboardLayout(InstructorDetails, 'Instructor Details', true)} />
+
+                  <Route exact path="/dashboard/course" component={DashboardLayout(CourseOverview, 'Course Overview')} />
+                  <Route exact path="/dashboard/course/:id" component={DashboardLayout(CourseDetails, 'Course Details', true)} />
 
                   <Route exact path="*" component={NotFound} />
                 </Switch>

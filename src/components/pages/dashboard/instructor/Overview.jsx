@@ -39,7 +39,7 @@ const Overview = () => {
                                     <div className="ui-page-header-options">
 
                                         <div className="ui-group-button">
-                                            <Link onClick={() => toggleAdd()} className="btn mini bg-brand-sd-lightblue onwhite font-matterbold">Add Student</Link>
+                                            <Link onClick={() => toggleAdd()} className="btn mini bg-brand-sd-lightblue onwhite font-matterbold">Add Instructor</Link>
                                             <Link className="btn mini ghost  brand-sd-blue font-matterregular ui-hide-mobile-only">Export</Link>
                                         </div>
 
@@ -79,11 +79,11 @@ const Overview = () => {
                                                         </span>
                                                         
                                                         <p className="font-matterregular fs-14 mrgb ui-line-height  onblack">
-                                                            There are no students currently. You can add a new student now.
+                                                            There are no courses currently. You can add a new talent now.
                                                         </p>
                                                                     
                                                         <div className="ui-group-button mrgt1">
-                                                            <Link onClick={(e) => toggleAdd(e)} className="btn btn-lg bg-brand-sd-lightblue onwhite font-mattermedium fs-14">Add Student</Link>
+                                                            <Link onClick={(e) => toggleAdd(e)} className="btn btn-lg bg-brand-sd-lightblue onwhite font-mattermedium fs-14">Add Course</Link>
                                                         </div>
 
                                                     </div>
@@ -118,7 +118,7 @@ const Overview = () => {
                                                 <td className="fs-14 font-matterlight onblack ui-hide-mobile-only">john@gmail.com</td>
                                                 <td className="fs-14 font-matterlight onblack ui-hide-mobile-only">Data structure</td>
                                                 <td className="fs-14 font-matterbold ui-group-button">
-                                                    <Link to="/dashoard/student/details" className="brandcc-lblue font-matterbold fs-14">Details</Link>
+                                                    <Link to="/dashboard/instructor/:id" className="brandcc-lblue font-matterbold fs-14">Details</Link>
                                                 </td>
                                             
                                             </tr>
@@ -126,7 +126,7 @@ const Overview = () => {
                                         </tbody>
 
                                     </table>
-
+                                    
                                 </div>
 
 

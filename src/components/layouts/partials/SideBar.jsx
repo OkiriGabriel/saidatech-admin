@@ -147,25 +147,25 @@ const SideBar = ({ barState }) => {
                             </Link>
                         </li>
 
-                        {/* <li className={ `${active === 'profile' ? 'active' : ''} nav-list` }>
-                            <Link onClick={(e) => goto(e, '/dashboard/student', 'profile')} to='' className='ui-icon-animate link' title='Profile'>
-                                <span className='saidatech-icon sl ' style={{position: 'relative', left: '-4px'}}><img src={`../../../images/icons/${active === 'profile' ? '': 'd'}profile.svg`} alt="icon" /></span>
+                         <li className={ `${active === 'instructor' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/instructor', 'instructor')} to='' className='ui-icon-animate link' title='Instructor'>
+                                <span className='saidatech-icon sl ' style={{position: 'relative', left: '-4px'}}><img src={`../../../images/icons/${active === 'instructor' ? '': 'd'}profile.svg`} alt="icon" /></span>
                                 <span style={{position: 'relative', left: '-4px'}} className='lnk--text sb-text font-matterregular fs-13'>
-                                    Profile
+                                    Instructor
                                 </span>
                             </Link>
                         </li>
 
-                        <li className={ `${active === 'payment' ? 'active' : ''} nav-list` }>
-                            <Link onClick={(e) => goto(e, '/dashboard/student', 'payment')} to='' className='ui-icon-animate link' title='Payment History'>
-                                <span style={{position: 'relative', left: '-4px'}} className='saidatech-icon md'><img src={`../../../images/icons/${active === 'payment' ? '': 'd'}cards.svg`} alt="icon" /></span>
+                        <li className={ `${active === 'course' ? 'active' : ''} nav-list` }>
+                            <Link onClick={(e) => goto(e, '/dashboard/course', 'course')} to='' className='ui-icon-animate link' title='Course'>
+                                <span style={{position: 'relative', left: '-4px'}} className='saidatech-icon md'><img src={`../../../images/icons/${active === 'course' ? '': 'd'}cards.svg`} alt="icon" /></span>
                                 <span style={{position: 'relative', left: '-4px'}} className='lnk--text sb-text font-matterregular fs-13'>
-                                    Payment History
+                                    Course
                                 </span>
                             </Link>
                         </li>
 
-                        <li className={ `${active === 'contracts' ? 'active' : ''} nav-list` }>
+                        {/* <li className={ `${active === 'contracts' ? 'active' : ''} nav-list` }>
                             <Link onClick={(e) => goto(e, '/dashboard/student', 'contracts')} to='' className='ui-icon-animate link' title='Contracts'>
                                 <span style={{position: 'relative', left: '-3px'}} className='saidatech-icon xsl'><img src={`../../../images/icons/${active === 'contracts' ? '': 'd'}book.svg`} alt="icon" /></span>
                                 <span style={{position: 'relative', left: '1px'}} className='lnk--text sb-text font-matterregular fs-13'>
