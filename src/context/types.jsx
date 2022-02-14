@@ -6,6 +6,41 @@ export const GET_LOCATIONS = 'GET_LOCATIONS';
 export const GET_COUNTRY = 'GET_COUNTRY';
 export const GET_IP_ADDRESS = 'GET_IP_ADDRESS';
 
+export const GET_A_STUDENT = 'GET_A_STUDENT';
+export const GET_STUDENTS = 'GET_STUDENTS';
+export const GET_STUDENT_CLASS = 'GET_STUDENT_CLASS';
+export const GET_STUDENT_ASSIGNMENT = 'GET_STUDENT_ASSIGNMENT';
+export const GET_STUDENT_TASK = 'GET_STUDENT_TASK';
+export const GET_STUDENT_CONTRACT = 'GET_STUDENT_CONTRACT';
+
+export const GET_AN_INSTRUCTOR = 'GET_AN_INSTRUCTOR';
+export const GET_INSTRUCTORS = 'GET_INSTRUCTORS';
+export const GET_INSTRUCTOR_CLASS = 'GET_INSTRUCTOR_CLASS';
+
+export const GET_ASSIGNMENT = 'GET_ASSIGNMENT';
+export const GET_ALL_ASSIGNMENTS = 'GET_ALL_ASSIGNMENTS'
+
+
+export const GET_TASK = 'GET_TASK';
+export const GET_ALL_TASK = 'GET_ALL_TASK';
+
+export const GET_A_BLOG = 'GET_A_BLOG';
+export const GET_BLOGS = 'GET_BLOGS';
+
+export const GET_AN_EVENT = 'GET_AN_EVENT';
+export const GET_EVENTS = 'GET_EVENTS';
+
+export const GET_A_COURSE = 'GET_AN_COURSE';
+export const GET_COURSES = 'GET_COURSES';
+
+export const GET_ALL_PAYMENT = 'GET_ALL_PAYMENTS';
+export const GET_STUDENT_PAYMENT = 'GET_STUDENT_PAYMENT';
+export const GET_BALANCE_PAYMENT = 'GET_BALANCE_PAYMENT';
+export const GET_PAYMENT = 'GET_PAYMENT';
+
+export const GET_CONTRACT = 'GET_CONTRACT';
+export const GET_ALL_CONTRACTS = 'GET_ALL_CONTRACTS';
+
 // generics
 export const SET_LOADING = 'SET_LOADING';
 export const UNSET_LOADING = 'UNSET_LOADING';
