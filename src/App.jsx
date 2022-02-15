@@ -16,6 +16,7 @@ const StudentOverview = React.lazy(() => import('./components/pages/dashboard/st
 const StudentDetails = React.lazy(() => import('./components/pages/dashboard/students/Details'));
 
 const InstructorOverview = React.lazy(() => import('./components/pages/dashboard/instructor/Overview'));
+const AddInstructor = React.lazy(() => import('./components/pages/dashboard/instructor/Add'));
 const InstructorDetails = React.lazy(() => import('./components/pages/dashboard/instructor/Details'));
 
 const CourseOverview = React.lazy(() => import('./components/pages/dashboard/course/Overview'));
@@ -54,6 +55,7 @@ const App = () => {
                   <Route exact path="/dashoard/student/:id" component={DashboardLayout(StudentDetails, 'Student Details', true)} />
 
                   <Route exact path="/dashboard/instructor" component={DashboardLayout(InstructorOverview, 'Instructor Overview')} />
+                  <Route exact path="/dashboard/instructor/add" component={DashboardLayout(AddInstructor, 'Add Instructor', true)} />
                   <Route exact path="/dashboard/instructor/:id" component={DashboardLayout(InstructorDetails, 'Instructor Details', true)} />
 
                   <Route exact path="/dashboard/course" component={DashboardLayout(CourseOverview, 'Course Overview')} />

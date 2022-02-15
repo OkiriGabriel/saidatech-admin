@@ -1,16 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import AddModal from "./Add"
-
 const Overview = () => {
-
-    const [show, setShow] = useState(false);
-
-    const toggleAdd = (e) => {
-        if(e) e.preventDefault();
-        setShow(!show);
-    }
 
     return (
         <>
@@ -19,7 +10,7 @@ const Overview = () => {
 
                 <div className="mrgt2">
 
-                    <div className="ui-dashboard-card ">
+                    <div className="ui-dashboard-card">
 
                         <div className="ui-dashboard-card-body">
 
@@ -39,7 +30,7 @@ const Overview = () => {
                                     <div className="ui-page-header-options">
 
                                         <div className="ui-group-button">
-                                            <Link onClick={() => toggleAdd()} className="btn mini bg-brand-sd-lightblue onwhite font-matterbold">Add Instructor</Link>
+                                            <Link to="/dashboard/instructor/add" className="btn mini bg-brand-sd-lightblue onwhite font-matterbold">Add Instructor</Link>
                                             <Link className="btn mini ghost  brand-sd-blue font-matterregular ui-hide-mobile-only">Export</Link>
                                         </div>
 
@@ -83,7 +74,7 @@ const Overview = () => {
                                                         </p>
                                                                     
                                                         <div className="ui-group-button mrgt1">
-                                                            <Link onClick={(e) => toggleAdd(e)} className="btn btn-lg bg-brand-sd-lightblue onwhite font-mattermedium fs-14">Add Course</Link>
+                                                            <Link to="/dashboard/instructor/add" className="btn btn-lg bg-brand-sd-lightblue onwhite font-mattermedium fs-14">Add Course</Link>
                                                         </div>
 
                                                     </div>
@@ -139,8 +130,6 @@ const Overview = () => {
                 </div>
 
             </section>
-
-            <AddModal isShow={show} closeModal={toggleAdd} modalTitle="Add Student" flattened={true} slim="slim-lg" />
 
         </>
     );
