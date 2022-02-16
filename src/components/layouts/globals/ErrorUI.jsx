@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SEO from '../../layouts/partials/SEO'

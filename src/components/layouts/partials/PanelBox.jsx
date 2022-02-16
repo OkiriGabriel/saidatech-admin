@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 import React, { useRef, useState, useEffect, useContext } from 'react'
 import { Link, useHistory, useParams } from 'react-router-dom';
 import Axios from 'axios'

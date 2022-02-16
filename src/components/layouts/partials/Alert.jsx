@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react';
+
+// eslint-disable-next-line
+/* eslint-disable */import React, {useEffect, useState} from 'react';
 
 const Alert = ({ show, message, type }) => {
 

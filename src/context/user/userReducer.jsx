@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 import {
     GET_LOGGEDIN_USER,
     GET_USER_STATUS,

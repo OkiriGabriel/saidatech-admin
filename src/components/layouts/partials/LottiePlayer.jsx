@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 import React, {useState} from 'react';
 import Lottie from 'react-lottie';
 

@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 let storage = {};
 
 storage.saveCredentials = (token, id, status) => {

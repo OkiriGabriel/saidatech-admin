@@ -118,7 +118,7 @@ const AddManager = ({isShow, closeModal, modalTitle, flattened, stretch, slim}) 
                                         <>
                                             <Message 
                                             title={'Thank You!'} 
-                                            message={`Manager added successfully.`} 
+                                            message={`Student added successfully.`} 
                                             action={closeX}
                                             status="success"
                                             lottieSize={100}

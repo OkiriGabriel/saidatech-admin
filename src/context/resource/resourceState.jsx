@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 import React, { useReducer, useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 import Axios from 'axios';

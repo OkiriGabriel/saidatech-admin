@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 import React, { Component } from 'react';
 import storage from '../../helpers/storage'
 

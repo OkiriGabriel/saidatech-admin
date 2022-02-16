@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 import React from 'react';
 
 const MainLoader = () => {

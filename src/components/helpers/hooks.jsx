@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+/* eslint-disable */
 import React, {useState, useRef, useEffect} from 'react'
 import network from './network';
 import loader from '../helpers/MainLoader'
