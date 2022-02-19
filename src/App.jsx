@@ -8,8 +8,9 @@ import ErrorUI from './components/layouts/globals/ErrorUI'
 import DashboardLayout from './components/layouts/globals/Dashboard'
 
 //context api states
-import UserState from './context/user/userState'
-import ResourceState from './context/resource/resourceState'
+import CourseState from './context/course/courseState';
+import InstructorState from './context/instructor/instructorState';
+import ResourceState from './context/resource/resourceState';
 
 // components: lazyload pages
 const StudentOverview = React.lazy(() => import('./components/pages/dashboard/students/Overview'));
@@ -39,7 +40,9 @@ const App = () => {
 
     <Router>
 
-      <UserState>
+      <InstructorState>
+
+        <CourseState>
 
           <ResourceState>
 
@@ -69,9 +72,10 @@ const App = () => {
             </Suspense>
 
           </ResourceState>
+
+        </CourseState> 
         
-      </UserState>
-                
+      </InstructorState>        
 
     </Router>
     

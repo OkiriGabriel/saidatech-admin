@@ -30,8 +30,8 @@ const SideBar = ({ barState }) => {
 
         redirectToLogin();
         setActive(storage.fetch('menu') ? storage.fetch('menu') : 'overview');
-        userContext.getUser();
-        userContext.getStatus(); 
+        // userContext.getUser();
+        // userContext.getStatus(); 
 
         if(storage.fetch('status')){
             const status = storage.fetch('status');

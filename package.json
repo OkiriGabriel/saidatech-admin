@@ -25,6 +25,7 @@
     "react-image-crop": "^9.0.5",
     "react-lottie": "^1.2.3",
     "react-modal-video": "^1.2.8",
+    "react-multivalue-text-input": "^1.0.0",
     "react-owl-carousel": "^2.3.0",
     "react-paystack": "^3.0.3",
     "react-router-dom": "^5.2.0",

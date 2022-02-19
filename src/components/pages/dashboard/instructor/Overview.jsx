@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import InstructorContext from '../../../../context/instructor/instructorContext';
+
 const Overview = () => {
+
+    const instructorContext = useContext(InstructorContext);
+
+    useEffect(() => {
+      instructorContext.getInstructors();
+    }, [])
+    
 
     return (
         <>
@@ -70,11 +79,11 @@ const Overview = () => {
                                                         </span>
                                                         
                                                         <p className="font-matterregular fs-14 mrgb ui-line-height  onblack">
-                                                            There are no courses currently. You can add a new talent now.
+                                                            There are no courses currently. You can add a new instructor now.
                                                         </p>
                                                                     
                                                         <div className="ui-group-button mrgt1">
-                                                            <Link to="/dashboard/instructor/add" className="btn btn-lg bg-brand-sd-lightblue onwhite font-mattermedium fs-14">Add Course</Link>
+                                                            <Link to="/dashboard/instructor/add" className="btn btn-lg bg-brand-sd-lightblue onwhite font-mattermedium fs-14">Add Instructor</Link>
                                                         </div>
 
                                                     </div>

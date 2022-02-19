@@ -98,8 +98,6 @@ const UserState = (props) => {
                 
             }
 
-        
-
     }
 
     const getStatus = async () => {
