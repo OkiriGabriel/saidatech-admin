@@ -122,7 +122,7 @@ const Add = () => {
                                         <textarea 
                                         defaultValue={(e) => {setAddData({...addData, bio: e.target.value })}}
                                         onChange={(e) => {setAddData({...addData, bio: e.target.value})}}
-                                        className="form-control" rows={3} defaultValue={""} />
+                                        className="form-control" rows={3} />
                                     </div>
                                     
                                     <div className="form-group">

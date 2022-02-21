@@ -26,10 +26,9 @@ const Login = (props) => {
     const [pass, setPass] = useState('password');
     const [step, setStep] = useState(0)
 
-    const [loginData, setloginData] = useState({
+    const [loginData, setLoginData] = useState({
         email: '',
-        password: '',
-        code: ''
+        password: ''
     })
 
     const [confirmPassword, setConfirm] = useState('')
@@ -61,8 +60,6 @@ const Login = (props) => {
     }
 
     // login fuunction
-    // emmabidem@gmail.com
-    // #emmabidem@gmail.com22/
     const login = async (e) => {
 
         if(e) e.preventDefault();
@@ -85,44 +82,34 @@ const Login = (props) => {
         } else {
             setLoading(true);
             // setTimerLoading(true);
-            await Axios.post(`${process.env.REACT_APP_AUTH_URL}/auth/login`, {...loginData}, storage.getConfig())
+            await Axios.post(`${process.env.REACT_APP_ADMIN_URL}/admin/signin`, {...loginData}, storage.getConfig())
             .then(async (resp) => {
-
-                if(resp.data.error === true && resp.data.status === 206){
-
-                    setStep(1);
-                    
-                }
-    
-                if(resp.data.error === false && resp.data.status === 200){
+              console.log(resp)
+                if (resp.status === 200) {
 
                     storage.saveCredentials(resp.data.token, resp.data.data._id);
-                    storage.saveStatus(resp.data.data.status);
+                    storage.saveStatus(resp.status);
 
-                    if(resp.data.data.isUser && resp.data.data.isActive){
-
-                        if(resp.data.data.isStudent){
-
-                            if(resp.data.data.passwordType === 'generated'){
-                                setStep(1);
-                            }else{
-                                history.push('/dashboard/student');
-                            }
-                            
+                    history.push('/dashboard/student')
+                  
+                    if (resp.data.data.isUser && resp.data.data.isActive) {
+                        
+                        if (resp.data.data.user.adminType) {
+                           
+                            history.push('/dashboard/student')
+                        } else {
+                            setAlert({ ...alert, type:"danger", show:true, message:"Access only for admin and superadmin" })
+                            setTimeout(() => {
+                                setAlert({ ...alert, show:false });
+                            }, 5000);
                         }
-
-                        if(resp.data.data.isFacilitor){
-
-                            if(resp.data.data.passwordType === 'generated'){
-                                setStep(1);
-                            }else{
-                                history.push('/dashboard/mentor');
-                            }
-                            
-                        }
-
+                        
+                    } else {
+                        setAlert({ ...alert, type:"danger", show:true, message:"Your account is deactivated. Please contact support." })
+                        setTimeout(() => {
+                            setAlert({ ...alert, show:false });
+                        }, 5000);
                     }
-                
                 }
 
                 setLoading(false);
@@ -304,11 +291,13 @@ const Login = (props) => {
 
                                                             <div>
                                                                 <h3 className="font-matterregular ui-text-center onblack  mrgb2 mrgt1 fs-16">
-                                                                    Welcome Back! Please login
+                                                                    Welcome! Please login
                                                                 </h3>
 
                                                                 <div className="form-group">
                                                                     <input 
+                                                                    defaultValue={(e) => {setLoginData({...loginData, email: e.target.value })}}
+                                                                    onChange={(e) => {setLoginData({...loginData, email: e.target.value})}}
                                                                     type="email" className="form-control fs-13 lg font-matterregular" 
                                                                     placeholder="Your email" />
                                                                 </div>
@@ -317,16 +306,19 @@ const Login = (props) => {
                                                                     <Link  onClick={(e) => showPass(e)} className="eye">
                                                                         <span className="saidatech-icon md"><img src={`../../../images/icons/${pass === "password" ? 'eye' : 'eye-off'}.svg`} alt="icon eye" /></span>
                                                                     </Link>
-                                                                    <input type={pass} 
+                                                                    <input 
+                                                                    defaultValue={(e) => {setLoginData({...loginData, password: e.target.value })}}
+                                                                    onChange={(e) => {setLoginData({...loginData, password: e.target.value})}}
+                                                                    type={pass} 
                                                                     className="form-control fs-13  font-matterregular lg" placeholder="Type password" />
                                                                 </div>
 
                                                                 <div className="ui-group-button mrgt2">
                                                                     {
                                                                         loading &&
-                                                                        <Link to="/" className="btn btn-block lg bg-brand-blue font-matterbold onwhite disabled-lt">
-                                                                            <span className='concreap-loader white sm'></span>
-                                                                        </Link>
+                                                                            <Link to="/" className="spinner-border" role="status">
+                                                                                <span className="sr-only">Loading...</span>
+                                                                            </Link>
                                                                     }
                                                                     {
                                                                         !loading &&
@@ -334,22 +326,8 @@ const Login = (props) => {
                                                                             Login
                                                                         </Link>
                                                                     }
-                                                                    </div>
-
-                                                                    <div className='ui-text-center mrgt1'>
-                                                                        <p  className="fs-13 font-matterlight mb-1 on-black ml-3">contiune using </p>
-                                                                        <a href=""><img src="../../../images/assets/google.png" alt="blob" width="20px" /></a>
-                                                                    </div>
-
-                                                                    <div className='ui-text-center mrgt1'>
-                                                                        <Link to="/forgot-password" className="font-matterregular brandcc-lightblue fs-12">Forgot Password?</Link>
-                                                                    </div>
-
-                                                                    <div className='ui-text-center mrgt pb-2'>
-                                                                        <Link to="/register" className="font-matterregular brandcc-indigo fs-12">New User ? Create account</Link>
-                                                                    </div>
+                                                                </div>
                                                                     
-                                                                
                                                             </div>
                                                                 
                                                         </>

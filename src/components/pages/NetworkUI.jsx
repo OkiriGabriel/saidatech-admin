@@ -19,12 +19,12 @@ const NetworkUI = () => {
 
             <SEO pageTitle="Concreap - Network Error" />
 
-            <div className="not-found bg-brandcc-purpledark">
+            <div className="not-found bg-brandcc-dblue ">
 
                <div className="container ui-text-center">
 
                 <img src="../../../images/icons/wifi.svg" width="140px" alt="wifi" />
-                <h3 className="mrgt1 font-metromedium fs-27 onwhite mrgb">Oops! Network error.</h3>
+                <h3 className="mrgt1 font-mattermedium fs-27 onwhite mrgb">Oops! Network error.</h3>
                 <p className="font-matterlight fs-14 onwhite mrgb2">There's an error network is unstable. Please refresh</p>
                 <Link onClick={(e) => goBack(e)} className="btn md ghost cc-red onwhite font-matterbold fs-15">Go Back</Link>
 

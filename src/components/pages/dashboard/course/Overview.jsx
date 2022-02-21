@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import AddModal from "./Add"
 
+import CourseContext from "../../../../context/course/courseContext";
+
 const Overview = () => {
 
+    const courseContext = useContext(CourseContext);
+
     const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        courseContext.getCourses();
+    },[])
+    
 
     const toggleAdd = (e) => {
         if(e) e.preventDefault();
@@ -49,6 +58,8 @@ const Overview = () => {
 
                                 <div>
 
+                                {
+                                    courseContext.loading &&
                                     <>
                                         <div className="empty-box md" style={{ backgroundColor: '#fff' }}>
 
@@ -62,7 +73,10 @@ const Overview = () => {
 
                                         </div>
                                     </>
+                                }
 
+                                {
+                                    !courseContext.loading && courseContext.courses.length === 0 &&
                                     <>
                                         <div className="empty-box md" style={{ backgroundColor: '#f3f6fb' }}>
 
@@ -92,42 +106,57 @@ const Overview = () => {
 
                                         </div>
                                     </>
+                                }
+
 
                                 </div>
 
-                                <div className="ui-wrapper-small table-responsive">
-
-                                    <table class="table ui-table courses-table">
-
-                                        <thead>
-                                            <tr>
-                                                <th className="fs-14 font-mattermedium onblack">Course name</th>
-                                                <th className="fs-14 font-mattermedium onblack">Tag</th>
-                                                <th className="fs-14 font-mattermedium onblack">Price</th>
-                                                <th className="fs-14 font-mattermedium onblack">Instructor Assigned</th>
-                                                <th className="fs-14 font-mattermedium onblack">Action</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-
-                                            <tr className="ui-table-row">
-
-                                                <td className="fs-14 font-matterlight onblack">Data Structure</td>
-                                                <td className="fs-14 font-matterlight onblack">Data</td>
-                                                <td className="fs-14 font-matterlight onblack ui-hide-mobile-only">$1,900</td>
-                                                <td className="fs-14 font-matterlight onblack ui-hide-mobile-only">Okiri Gabriel</td>
-                                                <td className="fs-14 font-matterbold ui-group-button">
-                                                    <Link to="/dashboard/course/:id" className="brandcc-lblue font-matterbold fs-14">Details</Link>
-                                                </td>
-                                            
-                                            </tr>
-
-                                        </tbody>
-
-                                    </table>
+                                {
+                                    !courseContext.loading && courseContext.courses.length > 0 &&
+                                    <>
                                     
-                                </div>
+                                        <div className="ui-wrapper-small table-responsive">
+
+                                            <table class="table ui-table courses-table">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th className="fs-14 font-mattermedium onblack">Course Title</th>
+                                                        <th className="fs-14 font-mattermedium onblack">Price</th>
+                                                        <th className="fs-14 font-mattermedium onblack">Instructor Assigned</th>
+                                                        <th className="fs-14 font-mattermedium onblack">Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    {
+                                                        courseContext.courses.length > 0 && courseContext.courses.map((c) => 
+                                                        
+                                                            <tr className="ui-table-row">
+
+                                                                <td className="fs-14 font-matterlight onblack">{c.title}</td>
+                                                                <td className="fs-14 font-matterlight onblack">$ {c.price}</td>
+                                                                <td className="fs-14 font-matterlight onblack ui-hide-mobile-only">{c.instructor}</td>
+                                                                <td className="fs-14 font-matterbold ui-group-button">
+                                                                    <Link to="/dashboard/course/:id" className="brandcc-lblue font-matterbold fs-14">Details</Link>
+                                                                </td>
+                                                            
+                                                            </tr>
+
+                                                        )
+                                                    }
+
+
+                                                </tbody>
+
+                                            </table>
+                                            
+                                        </div>
+
+                                    </>
+                                }
+
 
 
                             </div>
@@ -140,7 +169,7 @@ const Overview = () => {
 
             </section>
 
-            <AddModal isShow={show} closeModal={toggleAdd} modalTitle="Add Student" flattened={true} slim="slim-lg" />
+            <AddModal isShow={show} closeModal={toggleAdd} modalTitle="Add Course" flattened={true} slim="slim-lg" />
 
         </>
     );
